@@ -1,7 +1,8 @@
 # Lea Trueworthy
 # November 8, 2024
 # CSD 325 - Module 4.2 Assignment: High/Low Temperatures
-# Description: Alter this program that reads weather data from a CSV file and allow the user to view and plot daily high or low temperatures over a year.
+# Description: Modify the sitka_highs.py program and add a menu that lets users choose to view high temps, low temps, or to exit.
+# The program should loop until exit is selected, and an exit message should appear.
 
 import csv
 from datetime import datetime
@@ -14,7 +15,7 @@ def plot_temperatures(dates, temps, title, ylabel, color):
     fig, ax = plt.subplots()
     ax.plot(dates, temps, c=color)
 
-    # Format plot.
+    # Format plot
     plt.title(title, fontsize=24)
     plt.xlabel('', fontsize=16)
     fig.autofmt_xdate()
@@ -29,7 +30,7 @@ def read_temp_file(filename):
         reader = csv.reader(f)
         header_row = next(reader)
 
-    # Get dates and high and low temperatures from this file.
+    # Get dates and high and low temperatures from this file
         dates, highs, lows = [], [], []
         for row in reader:
             current_date = datetime.strptime(row[2], '%Y-%m-%d')
