@@ -6,11 +6,17 @@
     # Add an optional language parameter, then make it optional as well.
     # Run city_functions.py with all variations (city-country, city-country-population, and city-country-population-language).
 
-def city_country(city, country):
-    return(city, country)
+def city_country(city, country, population=None, language=None):
+    if population and language:
+        return f"{city}, {country} - population {population}, {language}"
+    elif population:
+        return f"{city}, {country} - population {population}"
+    elif language:
+        return f"{city}, {country}, {language}"
+    else:
+        return f"{city}, {country}"
 
-print("Denver,", "United States")
-print("Paris,", "France")
-print("Santiago,", "Chile")
-
+# Calling the function with different parameters
 print(city_country("Denver", "United States"))
+print(city_country("Paris", "France", 2200000))
+print(city_country("Santiago", "Chile", 5000000, "Spanish"))
