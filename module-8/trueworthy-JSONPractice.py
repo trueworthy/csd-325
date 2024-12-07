@@ -5,8 +5,6 @@ import json
 with open("student.json") as f:
     class_list = json.load(f)
 
-print(type(class_list))
-
 import json
 
 def list_of_students(class_list):
@@ -26,7 +24,7 @@ new_student = {"F_Name": "Lea",
                }
 
 with open("student.json", "w") as f:
-    json.dump(new_student, f, indent=4)
+    json.dump(new_student, f)
 
 class_list.append(new_student)
 

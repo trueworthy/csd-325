@@ -22,5 +22,11 @@
         "L_Name": "Kane",
         "Student_ID": 68554,
         "Email": "tkane@gmail.com"
+    },
+    {
+        "F_Name": "Lea",
+        "L_Name": "Trueworthy",
+        "Student_ID": "80228",
+        "Email": "ltrueworthy@my365.bellevue.edu"
     }
 ]
