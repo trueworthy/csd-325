@@ -1,4 +1,4 @@
-# https://pokeapi.co/docs/v2#machines-section
+# https://www.dataquest.io/blog/api-in-python/
 
 # Import the requests
 import requests
@@ -10,8 +10,8 @@ def jprint(obj):
     text = json.dumps(obj, sort_keys=True, indent=4)
     print(text)
 
-# Send a GET request to the PokeAPI endpoint to retrieve machine data for machine ID 2
-response = requests.get('https://pokeapi.co/api/v2/machine/2')
+# Make a GET request to the Open Notify API for a list of astronauts currently in space
+response = requests.get('http://api.open-notify.org/astros.json')
 
 # Print the status code of the response
 print(response.status_code)
