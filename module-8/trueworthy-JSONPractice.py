@@ -1,7 +1,12 @@
-# trueworthy_JSONPractice
+# Lea Trueworthy
+# December 6, 2024
+# CSD 325 - Module 8.2 Assignment: JSON Practice
+# Description: Create a Python program that loads a list of students from a JSON file, displays it, adds a new student, updates the file, and shows the updated list.
 
+# Import the json
 import json
 
+# Open and read the existing student data from the "student.json" file
 with open("student.json") as f:
     class_list = json.load(f)
 
@@ -15,8 +20,10 @@ def list_of_students(class_list):
         class_list = json.load(read_file)
 
 print("This is the original student list:")
+# list all students
 print(list_of_students(class_list))
 
+# Define a new student
 new_student = {"F_Name": "Lea",
                "L_Name": "Trueworthy",
                "Student_ID": "80228",
@@ -24,6 +31,7 @@ new_student = {"F_Name": "Lea",
                }
 
 with open("student.json", "w") as f:
+    # Overwrite the content of the file
     json.dump(new_student, f)
 
 class_list.append(new_student)
