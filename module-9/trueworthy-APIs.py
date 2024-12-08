@@ -1,4 +1,8 @@
-# https://pokeapi.co/docs/v2#machines-section
+# Lea Trueworthy
+# December 6, 2024
+# CSD 325 - Module 9.2 Assignment: APIs
+# Description: https://pokeapi.co/docs/v2#machines-section
+# Create a Python program that will test the connection, retrieve data about a specific Pokdmon machine, and format the output
 
 # Import the requests
 import requests

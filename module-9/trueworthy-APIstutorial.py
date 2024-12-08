@@ -1,4 +1,8 @@
-# https://www.dataquest.io/blog/api-in-python/
+# Lea Trueworthy
+# December 6, 2024
+# CSD 325 - Module 9.2 Assignment: API [tutorial]
+# Description: https://www.dataquest.io/blog/api-in-python/
+# Create a Python program for the tutorial to test the connection, fetch the current astronauts, and format the output
 
 # Import the requests
 import requests
