@@ -1,4 +1,8 @@
-# Listing 2.2 Our Scrolling To-Do.
+# Lea Trueworthy
+# December 14, 2024
+# CSD 325 - Module 10.2 Assignment: GUI ToDo
+# Description: Listing 2.2 Our Scrolling To-Do, "Python Tkinter By Example" by David Love
+# Change the window title to your last name-ToDo, update menu colors, use the right mouse button to delete tasks, add instructions for deletion, and include a "File -> Exit" option to close the program.
 
 import tkinter as tk
 import tkinter.messagebox as msg
@@ -21,8 +25,17 @@ class Todo(tk.Tk):
 
         self.tasks_canvas.configure(yscrollcommand=self.scrollbar.set)
 
-        self.title("To-Do App v2")
+        # window
+        self.title("Trueworthy-ToDo")
         self.geometry("300x400")
+
+        # menu
+        menu = tk.Menu(self)
+        # sub menu
+        file_menu = tk.Menu(menu, tearoff=False)
+        file_menu.add_command(label="Exit", command=self.quit)
+        menu.add_cascade(label="File", menu = file_menu)
+        self.configure(menu=menu)
 
         self.task_create = tk.Text(self.text_frame, height=3, bg="white", fg="black")
 
@@ -36,9 +49,9 @@ class Todo(tk.Tk):
         self.text_frame.pack(side=tk.BOTTOM, fill=tk.X)
         self.task_create.focus_set()
 
-        todo1 = tk.Label(self.tasks_frame, text="--- Add Items Here ---", bg="lightgrey",
+        todo1 = tk.Label(self.tasks_frame, text="--- Add Items ---  **Right click item to delete** ", bg="yellow",
             fg="black", pady=10)
-        todo1.bind("<Button-1>", self.remove_task)
+        todo1.bind("<Button-3>", self.remove_task)
 
         self.tasks.append(todo1)
 
@@ -52,7 +65,7 @@ class Todo(tk.Tk):
         self.bind_all("<Button-5>", self.mouse_scroll)
         self.tasks_canvas.bind("<Configure>", self.task_width)
 
-        self.colour_schemes = [{"bg": "lightgrey", "fg": "black"}, {"bg": "grey", "fg": "white"}]
+        self.colour_schemes = [{"bg": "yellow", "fg": "black"}, {"bg": "blue", "fg": "white"}]
 
     def add_task(self, event=None):
         task_text = self.task_create.get(1.0,tk.END).strip()
@@ -62,7 +75,7 @@ class Todo(tk.Tk):
 
             self.set_task_colour(len(self.tasks), new_task)
 
-            new_task.bind("<Button-1>", self.remove_task)
+            new_task.bind("<Button-3>", self.remove_task)
             new_task.pack(side=tk.TOP, fill=tk.X)
 
             self.tasks.append(new_task)
